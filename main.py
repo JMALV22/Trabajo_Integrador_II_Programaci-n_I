@@ -1,63 +1,46 @@
-"""
-Esto lo fui sacando de las clases del campus
-"""
-# Creamos la clase Nodo con dos atributos (valor e hijos) y un metodo (agregar_hijo).
+def crear_nodo(valor):
+  return [valor, [], []]
 
-class Nodo:
+def mostrar_arbol(nodo, nivel=0):
+    if nodo != []:
+        print('   ' * nivel + str(nodo[0]))
+        mostrar_arbol(nodo[1], nivel + 1)
+        mostrar_arbol(nodo[2], nivel + 1)
+
+def insertar_nodo_izq(nodo, valor):
+    if nodo[1] == []:
+        nodo[1] = crear_nodo(valor)
+    else:
+        insertar_nodo_izq(nodo[1], valor)
+
+def insertar_nodo_der(nodo, valor):
+    if nodo[2] == []:
+        nodo[2] = crear_nodo(valor)
+    else:
+        insertar_nodo_der(nodo[2], valor)
+
+def pedir_datos():
+    raiz = input('Ingrese el nodo raíz de su árbol: ')
+    arbol = crear_nodo(raiz)
+
+    while True:
+        posicion = input('Ingrese la posición del nodo (izquierda o derecha): ').lower()
+        valor = input('Ingrese el nombre de su familiar (o "z" para finalizar): ')
+        if valor == 'z':
+            break
+        if posicion == 'izquierda':
+            insertar_nodo_izq(arbol, valor)
+        elif posicion == 'derecha':
+            insertar_nodo_der(arbol, valor)
+        else:
+            print("Posición inválida. Escriba 'izquierda' o 'derecha'.")
+
+        mostrar_arbol(arbol)
+
+    return arbol
     
-    def __init__(self, valor):           # Constructor de la Clase Nodo
-        self.valor = valor               # Guarda el dato o valor que le pasás al nodo
-        self.hijos = {}                  # Diccionario con todos los hijos que va a tener el Nodo
+def main():
+  print(pedir_datos())
+
+main()
     
-    # Metodo agregar_hijo
-    def agregar_hijo(self, nodo):
-        self.hijos[nodo.valor] = nodo    # Agregamos al diccionario "hijos" --> diccionario[key_nueva] = valuer 
-    
-    # Metodo buscar_camino 
-    def buscar_camino(self, destino, camino=None):
-        # Inicializamos el camino solo una vez.
-        if camino is None:
-            camino = []
-
-        # Agregamos el nodo actual al camino
-        camino.append(self.valor)
-
-        # Si el nodo actual es el mismo que el nodo destino, retomamos el camino
-        if self.valor == destino:
-            return camino                 # Me devuelve None
-        
-        # Recorremos los hijos
-        for hijo in self.hijos.values():
-            # Buscamos de manera recursiva en cada hijo, pasando el camino como
-            # una copia para no modificar la lista original
-            camino_encontrado = hijo.buscar_camino(destino, camino[:])
-            # Si encontramos el camino, lo retomamos
-            if camino_encontrado:
-                return camino_encontrado
-
-# Creamos 6 objetos, uno para cada nodo, a partir de la clase Nodo
-
-raiz   = Nodo("A")
-nodo_b = Nodo("B")
-nodo_c = Nodo("C")
-nodo_d = Nodo("D")
-nodo_e = Nodo("E")
-nodo_f = Nodo("F")
-
-# Conectamos la raiz a sus hijos (B y C)
-raiz.agregar_hijo(nodo_b)
-raiz.agregar_hijo(nodo_c)
-
-# Conectamos el Nodo B a sus hijos (D y E)
-nodo_b.agregar_hijo(nodo_d)
-nodo_b.agregar_hijo(nodo_e)
-
-# Conectamos el Nodo C a sus hijos (F)
-nodo_c.agregar_hijo(nodo_f)
-
-print(raiz.hijos)
-
-print(nodo_b.hijos)
-
-print(nodo_c.hijos)
-
