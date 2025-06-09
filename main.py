@@ -1,33 +1,38 @@
+# Metodo para crear un nuevo nodo
 def crear_nodo(valor):
     return [valor, [], []]
 
+# Metodo para graficar el arbol en pantalla usando print
 def mostrar_arbol(nodo, nivel=0):
     if nodo != []:
         print('   ' * nivel + str(nodo[0]))
         mostrar_arbol(nodo[1], nivel + 1)
         mostrar_arbol(nodo[2], nivel + 1)
 
+# Metodo para insertar un nodo del lado izquierdo
 def insertar_nodo_izq(nodo, valor):
     if nodo[1] == []:
-        nodo[1] = crear_nodo(valor)
+        nodo[1] = crear_nodo(valor) # Si no hay ningun nodo en el lado izquierdo, crea un nuevo nodo en esa posicion
     else:
-        insertar_nodo_izq(nodo[1], valor)
+        insertar_nodo_izq(nodo[1], valor) # Si la funcion encuentra un nodo en esa posicion, vuelve a ejecutar la funcion en forma recursiva hasta encontrar un espacio vacio
 
+# Metodo para insertar un nodo del lado derecho
 def insertar_nodo_der(nodo, valor):
     if nodo[2] == []:
-        nodo[2] = crear_nodo(valor)
+        nodo[2] = crear_nodo(valor) # Al igual que el la funcion anterior, verifica que no haya ningun nodo y de ser asi, lo crea, con la unica diferencia de que se va a crear en la posicion de la lista 2
     else:
         insertar_nodo_der(nodo[2], valor)
 
+# Se encarga de pedirle los datos al usuario, y parar hasta que el usuario presione 'z'
 def pedir_datos():
     raiz = input('Ingrese el nodo raíz de su árbol: ')
     arbol = crear_nodo(raiz)
 
     while True:
-        posicion = input('Ingrese la posición del nodo (izquierda o derecha): ').lower()
-        valor = input('Ingrese el nombre de su familiar (o "z" para finalizar): ')
-        if valor == 'z':
+        posicion = input('Ingrese la posición del nodo (izquierda o derecha) o z para finalizar: ').lower()
+        if posicion == 'z':
             break
+        valor = input('Ingrese el nombre de su familiar: ')
         if posicion == 'izquierda':
             insertar_nodo_izq(arbol, valor)
         elif posicion == 'derecha':
@@ -39,22 +44,6 @@ def pedir_datos():
 
     return arbol
     
-def main():
-    print(pedir_datos())
-
-main()
-
-
-arbol = ["padre_a",                                        
-            ["I_hijo_a",
-                [],
-                ["D_Nieto_Hijo_I",[],[]]],                                       
-            ["D_hijo_a",
-                ["I_Nieto_Hijo_D",[],[]],
-                []
-            ]                           
-        ]
-
 """
 # Recorrido de Árbol - PreORDEN.
 """
@@ -138,7 +127,14 @@ def recorrer_postorden(arbol):
 
         postorden.append(arbol[0])                        # Finalmente se agrega la raíz
         return postorden                                  # Se retorna la lista con el recorrido
+    
+def main():
+    arbol = pedir_datos()
+    preorden = recorrer_preorden(arbol)
+    inorden = recorrer_inorden(arbol)
+    postorden = recorrer_postorden(arbol)
+    print(f"Recorrido PreORDEN:\n{preorden}")
+    print(f"Recorrido InORDEN:\n{inorden}")
+    print(f"Recorrido PostORDEN:\n{postorden}")
 
-print(f"Recorrido PreORDEN:\n{recorrer_preorden(arbol)}")
-print(f"Recorrido InORDEN:\n{recorrer_inorden(arbol)}")
-print(f"Recorrido PostORDEN:\n{recorrer_postorden(arbol)}")
+main()
