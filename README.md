@@ -1,67 +1,72 @@
-# 🌳 Trabajo Integrador - Programación I
+🌳 Trabajo Integrador - Programación I
+Carrera: Tecnicatura Universitaria en Programación
+Universidad: UTN - Facultad Regional Rosario
+Materia: Programación I
+Año: 2025
 
-**Carrera:** Tecnicatura Universitaria en Programación  
-**Universidad:** UTN  
-**Materia:** Programación I  
-**Año:** 2025  
+👥 Integrantes del equipo
+Jeremías Apiani
 
-## 👥 Participantes
-- Jeremías Apiani  
-- José Matías Álvarez
+José Matías Álvarez
 
----
+📌 Introducción
+En el marco de la asignatura Programación I, este trabajo integrador tiene como propósito el análisis y la implementación de estructuras de datos no lineales, haciendo foco en los árboles binarios, representados mediante listas anidadas en Python.
 
-## 📌 Introducción
+Los árboles son fundamentales en el ámbito de la informática, ya que permiten organizar datos de forma jerárquica. Son ampliamente utilizados en algoritmos de búsqueda, ordenamiento, en la gestión de sistemas de archivos, en compiladores y en múltiples áreas del desarrollo de software.
 
-En el marco de la asignatura **Programación I**, el presente trabajo práctico aborda el estudio y la implementación de **estructuras de datos no lineales**, enfocándose específicamente en los **árboles binarios** representados mediante **listas anidadas**.
+El presente trabajo desarrolla un sistema para construir árboles binarios, utilizando listas y funciones recursivas para su recorrido en las tres variantes clásicas: preorden, inorden y postorden. A través de ejemplos prácticos, se busca comprender la lógica de la navegación en árboles y su aplicación en situaciones reales de programación.
 
-Los árboles son una herramienta fundamental en la informática, ya que permiten organizar información de manera jerárquica. Constituyen la base de numerosos algoritmos aplicados en tareas como la **búsqueda**, **ordenamiento**, manejo de **estructuras de archivos**, **compiladores** y muchos otros sistemas.
+🎯 Objetivos
+Comprender el funcionamiento y la utilidad de los árboles binarios como estructura de datos.
 
-En este trabajo, se desarrolla un sistema de construcción de árboles utilizando listas en Python, junto con funciones recursivas para recorrerlos en sus tres formas clásicas: **preorden**, **inorden** y **postorden**. A través de ejemplos prácticos, se busca comprender la lógica detrás de la navegación en árboles binarios y su utilidad en contextos reales de programación.
+Implementar los recorridos preorden, inorden y postorden utilizando recursividad.
 
----
+Fomentar el trabajo colaborativo, asignando responsabilidades específicas a cada integrante.
 
-## 🎯 Objetivos
+Aplicar herramientas de desarrollo modernas como Visual Studio Code, Git y GitHub.
 
-- Comprender el funcionamiento de los **árboles binarios** como estructura de datos.
-- Implementar recorridos en **preorden**, **inorden** y **postorden** utilizando funciones recursivas.
-- Promover el **trabajo en equipo** y la colaboración entre compañeros mediante el reparto de tareas.
-- Aplicar herramientas de desarrollo actuales como **Visual Studio Code**, **Git** y **GitHub**.
-- Integrar teoría y práctica a través de la consulta de **fuentes académicas**, **videos explicativos** y la documentación oficial.
-- Fomentar el pensamiento lógico y la resolución de problemas estructurados.
+Integrar conocimientos teóricos con la práctica, mediante la consulta de fuentes académicas, videos educativos y documentación técnica.
 
----
+Estimular el pensamiento lógico y la capacidad de resolución de problemas mediante programación estructurada.
 
-## 🧪 Contenido
+🧪 Contenidos del proyecto
+Creación e inserción de nodos en el árbol binario.
 
-El proyecto incluye:
-- Creación e inserción de nodos.
-- Visualización estructurada del árbol.
-- Recorridos del árbol:
-  - Preorden
-  - Inorden
-  - Postorden
-- Implementación recursiva de los algoritmos.
-- Interacción con el usuario para carga de datos.
+Visualización jerárquica del árbol.
 
----
+Implementación de los recorridos:
 
-## 💻 Tecnologías y Herramientas Utilizadas
+Preorden
 
-- Python
-- Visual Studio Code (VSC)
-- Git y GitHub
-- Campus Virtual UTN
-- Videos educativos en YouTube
+Inorden
 
----
+Postorden
 
-## 📚 Bibliografía
+Uso de funciones recursivas para navegar la estructura.
 
-- Trapé, J. (s.f.). *Datos avanzados: información e imágenes sobre árboles binarios*. Campus Virtual UTN.  
-- Trapé, J. (s.f.). *Introducción a los árboles binarios [Video]*. Campus Virtual UTN.  
-- Vida MMR. (2021, 28 de junio). *PROGRAMACIÓN WEB - Árboles en estructuras de datos* [Video]. YouTube. https://www.youtube.com/watch?v=tBaOQeyXYqg&t=663s  
+Interacción básica con el usuario para el ingreso de datos.
 
----
+💻 Tecnologías y herramientas utilizadas
+Lenguaje de programación: Python
 
-> _Trabajo realizado con fines académicos - UTN FRRo 2025_
+Editor de código: Visual Studio Code
+
+Control de versiones: Git y GitHub
+
+Recursos educativos: Campus Virtual UTN, YouTube
+
+📎 Recursos complementarios generados por el grupo
+📹 Video explicativo del grupo sobre árboles binarios:
+https://www.youtube.com/watch?v=Oq4WPyiJ81k
+
+📄 Trabajo integrador en formato PDF (Google Drive):
+https://drive.google.com/drive/folders/1JAR5WTANdHF8i8QlKyZFyqaum_iMd4iZ?usp=sharing
+
+📚 Bibliografía
+Trapé, J. (s.f.). Datos avanzados: información e imágenes sobre árboles binarios. Campus Virtual UTN.
+
+Trapé, J. (s.f.). Introducción a los árboles binarios [Video]. Campus Virtual UTN.
+
+Vida MMR. (2021, 28 de junio). PROGRAMACIÓN WEB - Árboles en estructuras de datos [Video]. YouTube. https://www.youtube.com/watch?v=tBaOQeyXYqg&t=663s
+
+Trabajo realizado con fines académicos — UTN FRRo, 2025
